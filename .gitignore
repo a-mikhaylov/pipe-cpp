@@ -1,22 +1,12 @@
-source/*.exe
-process/*.exe
-sinc/*.exe
+# Ignore object files
+*.o
 
-source/.vscode/*
-!source/.vscode/settings.json
-!source/.vscode/tasks.json
-!source/.vscode/launch.json
-!source/.vscode/extensions.json
+# vscode files
+.vscode
 
-process/.vscode/*
-!process/.vscode/settings.json
-!process/.vscode/tasks.json
-!process/.vscode/launch.json
-!process/.vscode/extensions.json
-
-sinc/.vscode/*
-!sinc/.vscode/settings.json
-!sinc/.vscode/tasks.json
-!sinc/.vscode/launch.json
-!sinc/.vscode/extensions.json
+# eclipse files
+.cproject
+.project
+.classpath
+.settings
 
