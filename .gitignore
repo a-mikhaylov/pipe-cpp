@@ -10,3 +10,7 @@
 .classpath
 .settings
 
+*.json
+
+*.exe
+
