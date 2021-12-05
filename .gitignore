@@ -13,18 +13,7 @@
 # Ignore object files
 *.o
 
-# vscode files
-.vscode
+# vscode dirs
+.vscode/
 
-# eclipse files
-.cproject
-.project
-.classpath
-.settings
-
-# perf output
-perf.data*
-
-# maven output
-target
 
