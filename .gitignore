@@ -1,3 +1,15 @@
+# Ignore all
+*
+
+# Unignore all dirs
+!*/
+
+# Unignore all with extensions
+!*.*
+
+# Unignore .gitignore file
+!.gitignore
+
 # Ignore object files
 *.o
 
@@ -10,7 +22,9 @@
 .classpath
 .settings
 
-*.json
+# perf output
+perf.data*
 
-*.exe
+# maven output
+target
 
