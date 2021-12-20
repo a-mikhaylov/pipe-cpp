@@ -1,29 +1,34 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <io.h>
+#include <fcntl.h>
+#include <process.h>
+#include <math.h>
+#include <vector>
 #include <iostream>
 
-using namespace std;
 
-int main() {
-	int n;
-	int iter, iterp = 0;
-	double timeres;
-	
-	cin >> n;
+//enum PIPES { READ, WRITE }; /* Constants 0 and 1 for READ and WRITE */
+//#define NUMPROBLEM 8
 
-	int* arr = new int[n];
-	cout << n << " ";
-	for (int i = 0; i < n; i++) {
-		cin >> arr[i];
-		arr[i] = arr[i] * arr[i];
-		cout << arr[i] << " ";
+int main( int argc, char *argv[] )
+{
+  int arr[10] = {0};
 
-		iterp++;
-	}
+  constexpr size_t cache_length = 16384;
+   int32_t cachebuffer[cache_length];
+   size_t howmany = 0;
 
-	cin >> iter;
-	cin >> timeres;
-	iter += iterp;
-	//timeres += ((double)clock() / 1000);
-	cout << iter << " " << timeres << " ";
+  char* x = (char *)cachebuffer;
 
-	cout << "DONE! Every Items processed" << endl;
+   while(std::cin) {
+     std::cin.read((char *)cachebuffer, cache_length * sizeof(int32_t));
+     howmany += std::cin.gcount();
+   }
+
+  for (int i = 0; i < 15; i++) {
+    std::cout << i << ": " << cachebuffer[i] << std::endl;
+  }
+
+  std::cout << "Jobs done" << std::endl;
 }

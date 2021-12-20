@@ -1,31 +1,27 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <io.h>
+#include <fcntl.h>
+#include <process.h>
+#include <math.h>
+#include <vector>
 #include <iostream>
 
-using namespace std;
+//enum PIPES { READ, WRITE }; /* Constants 0 and 1 for READ and WRITE */
+//#define NUMPROBLEM 8
 
-int main() {
-    //double timeres;
-	int iter = 0;
-	int min, max, n;
-	
-	cout << "Input count of elements: ";
-	cin >> n;
-	cout << "Inpit min value: ";
-	cin >> min;
-	cout << "Input max value: ";
-	cin >> max;
+int main( int argc, char *argv[] )
+{
+   int32_t repeat = 10;
 
-	int* arr = new int[n];
+   constexpr size_t buflength = 16384;
+   std::vector<int32_t> buffer(buflength, 0);
 
-	cout << n << " ";
+   for (int32_t i = 0; i < repeat; i++) {
+     buffer[i] = i;
+  }
 
-	for (int i = 0; i < n; i++) {
-		arr[i] = rand() % (max - min + 1) + min;
-		cout << arr[i] << " ";
+  char* x = (char *)buffer.data();
 
-		iter++;
-	}
-
-	//timeres = (double)clock() / 1000;
-	//cout << iter << " " << timeres << " ";
-	cout << "DONE! Every items writen" << endl;
+  std::cout.write(x, buflength * sizeof(int32_t));
 }
