@@ -16,4 +16,10 @@
 # vscode dirs
 .vscode/
 
+out
+.vs
+CMakeSettings.json
+*.exe
+*.out
+
 
