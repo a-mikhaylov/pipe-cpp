@@ -13,9 +13,9 @@
 
 int main( int argc, char *argv[] )
 {
-  int arr[10] = {0};
+  //int arr[10] = {0};
 
-  constexpr size_t cache_length = 16384;
+  constexpr size_t cache_length = 50;
    int32_t cachebuffer[cache_length];
    size_t howmany = 0;
 
@@ -27,8 +27,12 @@ int main( int argc, char *argv[] )
    }
 
   for (int i = 0; i < 15; i++) {
+    //cachebuffer[i] *= cachebuffer[i];
+
     std::cout << i << ": " << cachebuffer[i] << std::endl;
   }
+
+  //std::cout.write(x, cache_length * sizeof(int32_t));
 
   std::cout << "Jobs done" << std::endl;
 }

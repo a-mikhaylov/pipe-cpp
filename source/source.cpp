@@ -14,7 +14,7 @@ int main( int argc, char *argv[] )
 {
    int32_t repeat = 10;
 
-   constexpr size_t buflength = 16384;
+   constexpr size_t buflength = 50;
    std::vector<int32_t> buffer(buflength, 0);
 
    for (int32_t i = 0; i < repeat; i++) {
