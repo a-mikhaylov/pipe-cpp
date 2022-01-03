@@ -6,6 +6,7 @@
 #include <math.h>
 #include <vector>
 #include <iostream>
+#include <time.h>
 
 
 //enum PIPES { READ, WRITE }; /* Constants 0 and 1 for READ and WRITE */
@@ -14,7 +15,7 @@
 int main( int argc, char *argv[] )
 {
   //int arr[10] = {0};
-
+  int32_t iter = 0;
   constexpr size_t cache_length = 50;
    int32_t cachebuffer[cache_length];
    size_t howmany = 0;
@@ -24,16 +25,17 @@ int main( int argc, char *argv[] )
    while(std::cin) {
      std::cin.read((char *)cachebuffer, cache_length * sizeof(int32_t));
      howmany += std::cin.gcount();
+     iter++;
    }
-
-  for (int i = 0; i < 15; i++) {
+  int32_t rep = cachebuffer[0];
+  for (int i = 1; i < rep + 1; i++) {
     cachebuffer[i] *= cachebuffer[i];
-
+    iter++;
     //std::cout << i << ": " << cachebuffer[i] << std::endl;
   }
 
-  //std::cout << howmany << std:: endl;
-
+  cachebuffer[rep + 1] += iter;
+  cachebuffer[rep + 2] += (clock() * 1000);
    std::cout.write(x, cache_length * sizeof(int32_t));
 
   //std::cout << "Jobs done" << std::endl;
