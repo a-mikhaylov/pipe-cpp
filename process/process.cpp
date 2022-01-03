@@ -27,12 +27,14 @@ int main( int argc, char *argv[] )
    }
 
   for (int i = 0; i < 15; i++) {
-    //cachebuffer[i] *= cachebuffer[i];
+    cachebuffer[i] *= cachebuffer[i];
 
-    std::cout << i << ": " << cachebuffer[i] << std::endl;
+    //std::cout << i << ": " << cachebuffer[i] << std::endl;
   }
 
-  //std::cout.write(x, cache_length * sizeof(int32_t));
+  //std::cout << howmany << std:: endl;
 
-  std::cout << "Jobs done" << std::endl;
+   std::cout.write(x, cache_length * sizeof(int32_t));
+
+  //std::cout << "Jobs done" << std::endl;
 }
