@@ -15,6 +15,7 @@
 
 # vscode dirs
 .vscode/
+build/
 
 out
 .vs
