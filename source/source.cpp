@@ -15,8 +15,15 @@ int main( int argc, char *argv[] )
    constexpr size_t buflength = 50;
    std::vector<int32_t> buffer(buflength, 0);
   buffer[0] = repeat;
+  int min, max;
+  min = 10;
+  max = 1000;
+  /*std::cout << "Input minimum value: ";
+  std::cin >> min;
+  std::cout << "Input maximum value: ";
+  std::cin >> max;*/
    for (int32_t i = 1; i < repeat + 1; i++) {
-     buffer[i] = rand() % 1000;
+     buffer[i] = rand() % (max - min) + min + 1;
      iter++;
   }
 

@@ -31,5 +31,6 @@ int main() {
 	std::cout << "Count of information is: " << cachebuffer[0] << std::endl;
 	std::cout << "Count of iterations is: " << cachebuffer[rep + 1] << std::endl;
 	std::cout << "Process time: " << time << "s" << std::endl;
+	std::cout << "process speed: " << (double)cachebuffer[rep + 1] / time << " iter/s" << std::endl;
 	std::cout << "Jobs done" << std::endl;
 }
